@@ -1,0 +1,86 @@
+.hero {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    opacity: 0;
+    gap: 15px;
+}
+
+.hero-text {
+    text-align: left;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: bold;
+    color: #FF5115;
+}
+
+p {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    p {
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .hero-image {
+        min-width: 120px;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-background {
+    display: block;
+}
+
+.hero-meditation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: float-up-down 3.5s ease-in-out infinite;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float-up-down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
