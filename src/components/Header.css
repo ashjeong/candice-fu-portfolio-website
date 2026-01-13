@@ -1,16 +1,19 @@
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 1.5rem;
+  min-width: 80px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .header-links {
   padding: 1.5rem;
+  padding-left: 0;
 }
 
 .header-link {
