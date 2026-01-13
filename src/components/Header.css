@@ -1,0 +1,20 @@
+.logo {
+  height: 6em;
+  padding: 1.5em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-links {
+  padding: 1.5rem;
+}
+
+.header-link {
+  color: #4847ed;
+  font-size: 18px;
+  font-weight: bold;
+}
