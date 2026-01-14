@@ -1,11 +1,43 @@
+.footer .logo {
+    width: 80px;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     background-color: #FF5115;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    gap: 1.5rem;
     color: #FFF8EE;
 }
 
+.footer-right a {
+    color: #FFF8EE;
+    text-align: end;
+}
+
 .footer-text {
-    padding: 1.5rem;
+    font-weight: normal;
+    font-size: 11px;
+    margin-bottom: 0;
+    text-align: end;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer .logo {
+        width: 62%;
+        margin: 10px 0 1.5rem 0;
+    }
+
+    .footer-text {
+        font-size: 12px;
+        margin: 1.5rem 0
+    }
 }

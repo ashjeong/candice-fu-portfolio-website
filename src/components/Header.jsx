@@ -1,29 +1,66 @@
+import { useState } from "react";
+import { useMediaQuery } from "@mui/material";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 import logo from "../assets/logo.svg";
-import Stack from "@mui/material/Stack";
-import Link from "@mui/material/Link";
+import NavLinks from "./NavLinks";
 import "./Header.css";
 
 export default function Header() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
+  const handleDrawerClose = () => {
+    setDrawerOpen(false);
+  };
+
   return (
     <div className="header">
       <a href="/">
         <img src={logo} className="logo" />
       </a>
-      <Stack
-        direction="row"
-        spacing={{ xs: 1, sm: 2, md: 4 }}
-        className="header-links"
-      >
-        <Link class="header-link" href="/work" underline="none">
-          {"WORK"}
-        </Link>
-        <Link class="header-link" href="/about" underline="none">
-          {"ABOUT"}
-        </Link>
-        <Link class="header-link" href="https://drive.google.com/file/d/18b9roccNMzs-1yWNJCMEHDjkmZakp_pQ/view?pli=1" target="_blank" underline="none">
-          {"RESUME"}
-        </Link>
-      </Stack>
+      {isSmallScreen ? (
+        <>
+          <MenuRoundedIcon
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ color: "#212121", fontSize: "5rem", fontWeight: "normal" }}
+          />
+          <Drawer
+            anchor="right"
+            open={drawerOpen}
+            onClose={handleDrawerClose}
+            PaperProps={{ sx: { width: "100vw", backgroundColor: "#FFF8EE"} }}
+          >
+            <Box
+              sx={{ width: "100vw", height: "100vh" }}
+              onKeyDown={handleDrawerClose}
+            >
+              <CloseRoundedIcon
+                onClick={handleDrawerClose}
+                aria-label="close drawer"
+                sx={{
+                  position: "absolute",
+                  top: "1.5rem",
+                  right: "1.5rem",
+                  fontSize: "5rem",
+                  color: "#212121",
+                }}
+              />
+              <NavLinks isVertical={true} isDrawer={true}/>
+            </Box>
+          </Drawer>
+        </>
+      ) : (
+        <NavLinks isVertical={false} />
+      )}
     </div>
   );
 }

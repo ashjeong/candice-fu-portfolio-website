@@ -7,12 +7,53 @@
   color: black;
 }
 
-.app {
+.layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .main {
-  flex: auto;
+  flex: 1 1 auto;
+}
+
+.scroll-to-top-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #4847edad;
+  font-size: 100%;
+}
+
+.scroll-to-top-arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #FFF8EEad;
+  font-size: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .scroll-to-top-button {
+    font-size: 13vw;
+  }
+
+  .scroll-to-top-arrow {
+    color: #FFF8EEad;
+    font-size: 9vw;
+    aspect-ratio: 1 / 1;
+
+  }
 }

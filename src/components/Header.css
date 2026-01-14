@@ -1,23 +1,15 @@
 .logo {
-  height: 6em;
-  padding: 1.5rem;
-  min-width: 80px;
+  height: auto;
+  width: fit-content;
+  min-height: 40px;
 }
 
 .header {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.header-links {
   padding: 1.5rem;
-  padding-left: 0;
-}
-
-.header-link {
   color: #4847ed;
-  font-size: 18px;
-  font-weight: bold;
 }
