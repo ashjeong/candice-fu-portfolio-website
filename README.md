@@ -18,3 +18,11 @@ Or run it directly with bash:
 ```bash
 bash setup.sh
 ```
+
+## Run
+
+Run up the website
+
+```bash
+npm run dev
+```
