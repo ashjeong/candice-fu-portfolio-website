@@ -1,6 +1,7 @@
 import { Stack } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer.jsx';
 import Header from '../components/Header.jsx';
 
 
@@ -41,6 +42,7 @@ export default function MainLayout() {
       <main style={{ flex: "auto" }}>
         <Outlet />
       </main>
+      <Footer />
     </Stack>
   );
 }
