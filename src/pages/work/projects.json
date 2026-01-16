@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Le Petit Patisserie",
+        "image-name": "LPP_Hero.json",
+        "tags": [
+            "Illustration",
+            "Brand Design",
+            "Product Design"
+        ],
+        "description": "A whimsical brand identity bringin French pastries into a storybook world.",
+        "backgroundColor": "#FDD10E"
+    },
+    {
+        "title": "mow",
+        "image-name": "mow.svg",
+        "tags": [
+            "Packaging",
+            "Brand Design",
+            "Illustration"
+        ],
+        "description": "A sustainable  shaving kit, offering a luxury shaving experience.",
+        "backgroundColor": "#007745"
+    },
+    {
+        "title": "Conrad Design Group Illustration",
+        "image-name": "cdg.jpg",
+        "tags": [
+            "Illustration"
+        ],
+        "description": "Illustrations capturing the energy and personality of Conrad Design Group's NYC office.",
+        "backgroundColor": "#D9D9D6"
+    },
+    {
+        "title": "Just for Fun",
+        "image-name": "fun.png",
+        "tags": [
+            "Fun Stuff!"
+        ],
+        "description": "A collection of illustrations and other mini projects that I made so far!",
+        "backgroundColor": "#FFF8EE"
+    }
+]

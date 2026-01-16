@@ -1,0 +1,57 @@
+.hero {
+    display: flex;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    opacity: 0;
+    gap: 15px;
+}
+
+.hero-text {
+    text-align: left;
+    max-width: 500px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.meditation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: float-up-down 3.5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
+@keyframes float-up-down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
