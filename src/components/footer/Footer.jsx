@@ -1,7 +1,7 @@
 import Link from '@mui/material/Link';
 import "./Footer.css";
-import LogoIcon from "./Logo";
-import NavLinks from "./NavLinks";
+import LogoIcon from "../common/Logo";
+import NavLinks from "../navlinks/NavLinks";
 
 
 export default function Footer() {

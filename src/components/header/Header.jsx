@@ -2,8 +2,8 @@ import { CloseRounded, MenuRounded } from "@mui/icons-material";
 import { Drawer, Link, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import "./Header.css";
-import LogoIcon from "./Logo";
-import NavLinks from "./NavLinks";
+import LogoIcon from "../common/Logo";
+import NavLinks from "../navlinks/NavLinks";
 
 
 export default function Header({ showHeader }) {
