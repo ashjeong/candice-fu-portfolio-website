@@ -1,7 +1,6 @@
-import meditationBackground from './assets/meditation-background.svg';
-import meditation from './assets/meditation.svg';
+import meditationBackground from "./assets/meditation-background.svg";
+import meditation from "./assets/meditation.svg";
 import "./Home.css";
-
 
 function Hero() {
   return (
@@ -22,14 +21,16 @@ function Hero() {
       <div className="hero-text">
         <h1>hi!</h1>
         <h1>i’m candice!</h1>
-        <p>I am a passionate graphic designer and illustrator with a love for creating that brings joy to others.</p>
+        <p>
+          I am a passionate graphic designer and illustrator with a love for
+          creating that brings joy to others.
+        </p>
       </div>
     </div>
   );
 }
 
 export default function Home() {
-
   return (
     <>
       <Hero />

@@ -5,13 +5,17 @@ import "./Header.css";
 import LogoIcon from "../common/Logo";
 import NavLinks from "../navlinks/NavLinks";
 
-
 export default function Header({ showHeader }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   return (
-    <div className="header" style={{ transform: showHeader ? "translateY(0)" : "translateY(-120%)" }}>
+    <div
+      className="header"
+      style={{
+        transform: showHeader ? "translateY(0)" : "translateY(-120%)",
+      }}
+    >
       <Link href="/">
         <LogoIcon style={{ width: "4rem", height: "auto", fill: "#FF5115" }} />
       </Link>
@@ -27,7 +31,13 @@ export default function Header({ showHeader }) {
           <Drawer
             anchor="right"
             open={drawerOpen}
-            PaperProps={{ sx: { width: "100vw", height: "100vh", backgroundColor: "#FFF8EE" } }}
+            PaperProps={{
+              sx: {
+                width: "100vw",
+                height: "100vh",
+                backgroundColor: "#FFF8EE",
+              },
+            }}
           >
             <CloseRounded
               onClick={() => {
@@ -40,7 +50,7 @@ export default function Header({ showHeader }) {
                 position: "absolute",
                 top: "1.5rem",
                 right: "1.5rem",
-                color: "#212121"
+                color: "#212121",
               }}
             />
             <NavLinks isDrawer={true} />
