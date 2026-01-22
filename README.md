@@ -6,17 +6,10 @@ This project is a re-work of a previously created website with low responsivenes
 
 ## Setup
 
-Run the setup script to install all dependencies:
+Install all dependencies:
 
 ```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-Or run it directly with bash:
-
-```bash
-bash setup.sh
+npm install
 ```
 
 ## Run
