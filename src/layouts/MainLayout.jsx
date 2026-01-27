@@ -1,11 +1,11 @@
 import { Stack } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/footer/Footer.jsx";
-import Header from "../components/header/Header.jsx";
-import ScrollButton from "../components/scrollButton/ScrollButton.jsx";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
+import ScrollButton from "../components/scrollButton/ScrollButton";
 import { ThemeProvider } from "@mui/material/styles";
-import { websiteTheme } from "../components/common/Palette.jsx";
+import { websiteTheme } from "../components/common/Palette";
 
 export default function MainLayout() {
   const [showHeader, setShowHeader] = useState(true);

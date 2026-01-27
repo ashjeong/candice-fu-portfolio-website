@@ -8,7 +8,8 @@
             "Product Design"
         ],
         "description": "A whimsical brand identity bringin French pastries into a storybook world.",
-        "backgroundColor": "#FDD10E"
+        "backgroundColor": "#FDD10E",
+        "link": "/lepetitpatisserie"
     },
     {
         "title": "mow",
@@ -19,7 +20,8 @@
             "Illustration"
         ],
         "description": "A sustainable  shaving kit, offering a luxury shaving experience.",
-        "backgroundColor": "#007745"
+        "backgroundColor": "#007745",
+        "link": "/mow"
     },
     {
         "title": "Conrad Design Group Illustration",
@@ -28,7 +30,8 @@
             "Illustration"
         ],
         "description": "Illustrations capturing the energy and personality of Conrad Design Group's NYC office.",
-        "backgroundColor": "#D9D9D6"
+        "backgroundColor": "#D9D9D6",
+        "link": "/conrandesigngroup"
     },
     {
         "title": "Just for Fun",
@@ -37,6 +40,7 @@
             "Fun Stuff!"
         ],
         "description": "A collection of illustrations and other mini projects that I made so far!",
-        "backgroundColor": "#FFF8EE"
+        "backgroundColor": "#FFF8EE",
+        "link": "/justforfun"
     }
 ]
