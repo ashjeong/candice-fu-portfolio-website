@@ -1,0 +1,31 @@
+.fixed-button {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 40px;
+    margin-bottom: 140px;
+    z-index: 1;
+    opacity: 0.8;
+    fill: #646CFF;
+}
+
+.background-button {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 40px;
+    margin-bottom: 140px;
+    z-index: 1;
+    opacity: 0.8;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .fixed-button {
+        margin-bottom: 40px;
+    }
+
+    .background-button {
+        margin-bottom: 40px;
+    }
+}

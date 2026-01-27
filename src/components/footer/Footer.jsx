@@ -1,8 +1,7 @@
-import Link from '@mui/material/Link';
 import "./Footer.css";
+import Link from "@mui/material/Link";
 import LogoIcon from "../common/Logo";
 import NavLinks from "../navlinks/NavLinks";
-
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,7 +9,10 @@ export default function Footer() {
   return (
     <div className="footer">
       <Link href="/">
-        <LogoIcon className="footer-logo" style={{ width: "4.5rem", height: "auto", fill: "#FFF8EE" }} />
+        <LogoIcon
+          className="footer-logo"
+          style={{ width: "4.5rem", height: "auto", fill: "#FFF8EE" }}
+        />
       </Link>
       <div className="footer-right">
         <NavLinks />
