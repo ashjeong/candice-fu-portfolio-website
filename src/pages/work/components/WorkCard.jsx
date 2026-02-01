@@ -35,7 +35,7 @@ function getCardMediaComponent(imageName, title) {
   return (
     <CardMedia
       component="img"
-      image={`/src/pages/work/assets/${imageName}`}
+      image={`./src/pages/work/assets/${imageName}`}
       alt={title}
     />
   );
