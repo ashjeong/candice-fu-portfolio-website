@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
-    <meta
-      http-equiv="refresh"
-      content="0; url=/candice-fu-portfolio-website/"
-    />
+    <title>Redirecting…</title>
+    <script>
+      // CHANGE THIS to your repo name
+      const repo = "/candice-fu-portfolio-website";
+
+      // Remove the repo prefix from the current path
+      const path = location.pathname.replace(repo, "");
+
+      // Redirect to index.html with the path encoded
+      location.replace(
+        repo + "/?redirect=" + encodeURIComponent(path)
+      );
+    </script>
   </head>
   <body></body>
 </html>
