@@ -13,7 +13,7 @@ import JustForFun from "./pages/work/projects/JustForFun";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/candice-fu-portfolio-website">
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
