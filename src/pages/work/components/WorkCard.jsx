@@ -11,10 +11,14 @@ import "./WorkCard.css";
 import { Link } from "react-router-dom";
 
 // Map of JSON filenames to their animation data
+const images = import.meta.glob("../assets/*.{png,jpg,svg}", {
+  eager: true,
+});
 const lottieAnimations = import.meta.glob("../assets/*.json", { eager: true });
 
 function getCardMediaComponent(imageName, title) {
   const isLottie = imageName.endsWith(".json");
+  const key = `../assets/${imageName}`;
 
   if (isLottie) {
     const key = `../assets/${imageName}`;
@@ -32,13 +36,8 @@ function getCardMediaComponent(imageName, title) {
     }
   }
 
-  return (
-    <CardMedia
-      component="img"
-      image={`./src/pages/work/assets/${imageName}`}
-      alt={title}
-    />
-  );
+  const image = images[key]?.default;
+  return <CardMedia component="img" image={image} alt={title} />;
 }
 
 // TODO(ashjeong): Fix sizing
