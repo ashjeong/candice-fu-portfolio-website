@@ -22,12 +22,14 @@ function getCardMediaComponent(imageName, title) {
 
     if (animation) {
       return (
-        <Lottie
-          animationData={animation}
-          loop
-          autoplay
-          style={{ width: "100%", height: "100%" }}
-        />
+        <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
+          <Lottie
+            animationData={animation}
+            loop
+            autoplay
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
       );
     }
   }
@@ -37,6 +39,12 @@ function getCardMediaComponent(imageName, title) {
       component="img"
       image={`/src/pages/work/assets/${imageName}`}
       alt={title}
+      sx={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        objectPosition: "center",
+      }}
     />
   );
 }
@@ -50,14 +58,32 @@ export default function WorkCard({
   backgroundColor,
   link,
 }) {
+  // Determine if background is dark or light
+  const isDarkBackground = (hex) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance < 0.5;
+  };
+
+  const textColor = isDarkBackground(backgroundColor) ? "white" : "#333333";
+
   return (
     <CardActionArea component={Link} to={link}>
       <Card
         className="card"
         sx={{
           backgroundColor: { backgroundColor },
-          borderRadius: "10px",
+          borderRadius: "25px",
           boxShadow: "none",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+          "--text-color": textColor,
+          overflow: "hidden",
         }}
       >
         {getCardMediaComponent(imageName, title)}
@@ -67,7 +93,11 @@ export default function WorkCard({
               <Chip
                 key={index}
                 label={tag}
-                sx={{ fontSize: "12px", borderColor: "#33333388" }}
+                sx={{
+                  fontSize: "12px",
+                  borderColor: textColor,
+                  color: textColor,
+                }}
                 variant="outlined"
               />
             ))}
