@@ -7,7 +7,7 @@ import About from "./pages/about/About";
 import Home from "./pages/home/Home";
 import Work from "./pages/work/Work";
 import Patisserie from "./pages/work/projects/Patisserie";
-import Mow from "./pages/work/projects/Mow";
+import Mow from "./pages/work/projects/mow/Mow";
 import ConranDesignGroup from "./pages/work/projects/ConranDesignGroup";
 import JustForFun from "./pages/work/projects/JustForFun";
 
