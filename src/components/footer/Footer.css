@@ -10,6 +10,9 @@
 
 .footer-right, .footer-right a {
     color: #FFF8EE;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .small {
@@ -26,6 +29,10 @@
 
     .footer-logo {
         margin: 10px 0 2rem 0;
+    }
+
+    .footer-right {
+        align-items: flex-start;
     }
 
     .small {

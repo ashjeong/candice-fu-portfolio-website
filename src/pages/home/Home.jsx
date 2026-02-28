@@ -1,32 +1,20 @@
-import meditationBackground from "./assets/meditation-background.svg";
-import meditation from "./assets/meditation.svg";
 import "./Home.css";
+import { Stack, useMediaQuery } from "@mui/material";
+import WebHomePage from "./WebHomePage";
+import MobileHomePage from "./MobileHomePage";
+import WorkCardVertical from "../work/WorkCardVertical";
 
 function Hero() {
+  const isSmallScreen = useMediaQuery("(max-width:800px)");
+
   return (
-    <div className="hero">
-      <div style={{ position: "relative" }}>
-        <img
-          className="hero-image"
-          style={{ aspectRatio: "629/517" }}
-          src={meditationBackground}
-          alt="Meditation Background"
-        />
-        <img
-          className="hero-image meditation"
-          src={meditation}
-          alt="Meditation Character"
-        />
-      </div>
-      <div className="hero-text">
-        <h1>hi!</h1>
-        <h1>i’m candice!</h1>
-        <p>
-          I am a passionate graphic designer and illustrator with a love for
-          creating that brings joy to others.
-        </p>
-      </div>
-    </div>
+    <Stack
+      spacing={isSmallScreen ? 3 : { sm: 2, md: 4 }}
+      sx={{ padding: "1.5rem", maxWidth: 1200, margin: "0 auto" }}
+    >
+      {isSmallScreen ? <MobileHomePage /> : <WebHomePage />}
+      <WorkCardVertical />
+    </Stack>
   );
 }
 

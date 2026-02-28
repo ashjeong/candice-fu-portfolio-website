@@ -19,7 +19,7 @@ export default function Work() {
           <WorkCard
             title={project.title}
             description={project.description}
-            imageName={project["image-name"]}
+            imageName={project.imageName}
             tags={project.tags}
             backgroundColor={project.backgroundColor}
             link={project.link}
