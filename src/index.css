@@ -38,6 +38,38 @@ h2 {
   color: #4847ed;
   line-height: 1.1;
 }
+h3 {
+  font-style: normal;
+  font-family: Outfit;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-feature-settings: "liga";
+  font-variation-settings: 'wght' 700;
+  color: rgba(72, 71, 237, 1);
+}
+
+h4 {
+  text-transform: none;
+  font-size: 20px;
+  font-family: Outfit;
+  font-feature-settings: "liga";
+  font-weight: 100;
+  color: rgba(51, 51, 51, 1);
+  font-style: normal;
+  letter-spacing: 0.0px;
+  text-decoration: none;
+  font-variation-settings: 'wght' 700;
+}
+
+h5 {
+  font-style: normal;
+  font-size: 28px;
+  font-family: Outfit;
+  font-weight: 100;
+  text-transform: none;
+  font-feature-settings: "liga";
+  font-variation-settings: 'wght' 300;
+}
 
 h3 {
   font-style: normal;
@@ -89,6 +121,10 @@ p {
   font-size: 16px;
 }
 
+.strong {
+  font-weight: bold;
+  font-variation-settings: 'wght' 700;
+}
 .strong {
   font-weight: bold;
   font-variation-settings: 'wght' 700;
