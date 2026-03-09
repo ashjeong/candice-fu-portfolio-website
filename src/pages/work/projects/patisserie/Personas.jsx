@@ -1,7 +1,7 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useState, useRef, useEffect } from "react";
-import { Grid, Box, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 
 import personaMain from "./assets/user_persona_1.png";
 import persona1 from "./assets/user_persona_2.png";

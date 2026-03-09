@@ -4,7 +4,7 @@ import mowSustainability from "./assets/Mow_Sustainability.svg";
 import mowTime from "./assets/Mow_Time.svg";
 import mowRazor from "./assets/Mow_Icons_Razor.svg";
 
-export default function MowInfographics() {
+export default function MowInfographics({ isSmallScreen }) {
   return (
     <Grid
       container
@@ -26,9 +26,10 @@ export default function MowInfographics() {
           alignItems="center"
           sx={{
             width: 330,
-            height: 330,
+            height: isSmallScreen ? "100%" : 330,
             bgcolor: "#3C8A55",
             borderRadius: "16px",
+            marginBottom: isSmallScreen ? 4 : 0,
           }}
         >
           <Stack spacing={1} alignItems="center">
@@ -52,9 +53,10 @@ export default function MowInfographics() {
           alignItems="center"
           sx={{
             width: 330,
-            height: 330,
+            height: isSmallScreen ? "100%" : 330,
             bgcolor: "#2F4A3A",
             borderRadius: "16px",
+            marginBottom: isSmallScreen ? 4 : 0,
           }}
         >
           <Stack spacing={1} alignItems="center">
@@ -77,9 +79,10 @@ export default function MowInfographics() {
           alignItems="center"
           sx={{
             width: 330,
-            height: 330,
+            height: isSmallScreen ? "100%" : 330,
             bgcolor: "#C4C646",
             borderRadius: "16px",
+            marginBottom: isSmallScreen ? 4 : 0,
           }}
         >
           <Stack spacing={1} alignItems="center">
@@ -108,9 +111,10 @@ export default function MowInfographics() {
           alignItems="center"
           sx={{
             width: 330,
-            height: 330,
+            height: isSmallScreen ? "100%" : 330,
             bgcolor: "#355E3B",
             borderRadius: "16px",
+            marginBottom: isSmallScreen ? 4 : 0,
           }}
         >
           <Stack spacing={1} alignItems="center">

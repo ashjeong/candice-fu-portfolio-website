@@ -1,6 +1,12 @@
 import { Grid, Stack } from "@mui/material";
 
-export default function Logo() {
+import MowLogo from "./assets/Mow_Logo.png";
+import MowFont from "./assets/Mow_Font.png";
+import MowGraphic from "./assets/Mow_Graphic.png";
+import MowColorPalette from "./assets/Mow_Color_Palette.png";
+import MowToneOfVoice from "./assets/Mow_Tone_of_Voice.png";
+import MowMascot from "./assets/Mow_Mascot.png";
+export default function Logo({ isSmallScreen }) {
   return (
     <Stack spacing={3}>
       <h5>Logo</h5>
@@ -13,7 +19,7 @@ export default function Logo() {
       </p>
 
       <img
-        src="src/pages/work/projects/mow/assets/Mow_Logo.png"
+        src={MowLogo}
         alt="Mow Logo"
         style={{
           borderRadius: "16px",
@@ -32,37 +38,37 @@ export default function Logo() {
         grooming and garden imagery.
       </p>
       <Grid container spacing={4}>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="src/pages/work/projects/mow/assets/Mow_Font.png"
+            src={MowFont}
             alt="Mow Font"
             style={{ width: "100%", borderRadius: "16px" }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="src/pages/work/projects/mow/assets/Mow_Graphic.png"
+            src={MowGraphic}
             alt="Mow Graphic"
             style={{ width: "100%", borderRadius: "16px" }}
           />
         </Grid>
-        <Grid size={12}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="src/pages/work/projects/mow/assets/Mow_Color_Palette.png"
+            src={MowColorPalette}
             alt="Mow Color Palette"
             style={{ width: "100%", borderRadius: "16px" }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="src/pages/work/projects/mow/assets/Mow_Tone_of_Voice.png"
+            src={MowToneOfVoice}
             alt="Mow Tone of Voice"
             style={{ width: "100%", borderRadius: "16px" }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="src/pages/work/projects/mow/assets/Mow_Mascot.png"
+            src={MowMascot}
             alt="Mow Mascot"
             style={{ width: "100%", borderRadius: "16px" }}
           />

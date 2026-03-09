@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import checkoutFlowMov from "./assets/LPP_Checkout_Flow.mov";
 import productFlowMov from "./assets/LPP_Main_Page_Prototype.mov";
 
-export default function ProductExperience() {
+export default function ProductExperience({ isSmallScreen }) {
   const lottieAnimations = import.meta.glob("./assets/*.json", { eager: true });
   const mobilePreview =
     lottieAnimations["./assets/LPP_mobile_screen_preview.json"]?.default;
@@ -59,37 +59,72 @@ export default function ProductExperience() {
         </div>
       )}
 
-      <Grid container spacing={8} sx={{ marginBottom: "2rem" }}>
-        <Grid size={6}>
-          <video
-            src={productFlowMov}
-            muted
-            loop
-            autoPlay
-            playsInline
-            controls={false}
-            style={{
-              width: "100%",
-              maxWidth: 420,
-              borderRadius: 12,
-              objectFit: "cover",
-            }}
-          />
-        </Grid>
-        <Grid size={6}>
-          <h5>Product Flow</h5>
-          <p>
-            The product flow was designed to make ordering pastries as seamless
-            and magical as visiting the bakery. Customers start on the homepage,
-            explore the menu through clear categories and vivid visuals, and can
-            easily learn about the bakery’s mission or reach out via the contact
-            page.
-          </p>
-        </Grid>
-      </Grid>
+      {isSmallScreen ? (
+        <>
+          <Grid container spacing={8} sx={{ marginBottom: "2rem" }}>
+            <Grid size={12}>
+              <h5>Product Flow</h5>
+              <p>
+                The product flow was designed to make ordering pastries as
+                seamless and magical as visiting the bakery. Customers start on
+                the homepage, explore the menu through clear categories and
+                vivid visuals, and can easily learn about the bakery’s mission
+                or reach out via the contact page.
+              </p>
+            </Grid>
+          </Grid>
+          <Grid size={12}>
+            <video
+              src={productFlowMov}
+              muted
+              loop
+              autoPlay
+              playsInline
+              controls={false}
+              style={{
+                width: "100%",
+                maxWidth: 420,
+                borderRadius: 12,
+                objectFit: "cover",
+              }}
+            />
+          </Grid>
+        </>
+      ) : (
+        <>
+          <Grid container spacing={8} sx={{ marginBottom: "2rem" }}>
+            <Grid size={6}>
+              <video
+                src={productFlowMov}
+                muted
+                loop
+                autoPlay
+                playsInline
+                controls={false}
+                style={{
+                  width: "100%",
+                  maxWidth: 420,
+                  borderRadius: 12,
+                  objectFit: "cover",
+                }}
+              />
+            </Grid>
+            <Grid size={6}>
+              <h5>Product Flow</h5>
+              <p>
+                The product flow was designed to make ordering pastries as
+                seamless and magical as visiting the bakery. Customers start on
+                the homepage, explore the menu through clear categories and
+                vivid visuals, and can easily learn about the bakery’s mission
+                or reach out via the contact page.
+              </p>
+            </Grid>
+          </Grid>
+        </>
+      )}
 
       <Grid container spacing={8} sx={{ marginBottom: "2rem" }}>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <h5>Purchase Flow</h5>
           <p>
             The checkout is streamlined with delivery or pickup options, playful
@@ -98,7 +133,7 @@ export default function ProductExperience() {
             visiting the bakery in person.
           </p>
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <video
             src={checkoutFlowMov}
             muted
