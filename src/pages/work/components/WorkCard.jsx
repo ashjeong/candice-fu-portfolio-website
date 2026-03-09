@@ -11,10 +11,14 @@ import "./WorkCard.css";
 import { Link } from "react-router-dom";
 
 // Map of JSON filenames to their animation data
+const images = import.meta.glob("../assets/*.{png,jpg,svg}", {
+  eager: true,
+});
 const lottieAnimations = import.meta.glob("../assets/*.json", { eager: true });
 
 function getCardMediaComponent(imageName, title) {
   const isLottie = imageName.endsWith(".json");
+  const key = `../assets/${imageName}`;
 
   if (isLottie) {
     const key = `../assets/${imageName}`;

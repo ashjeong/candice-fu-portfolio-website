@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import { CloseRounded, MenuRounded } from "@mui/icons-material";
 import { Drawer, Link, useMediaQuery } from "@mui/material";
 import { useState } from "react";
@@ -16,7 +17,7 @@ export default function Header({ showHeader }) {
         transform: showHeader ? "translateY(0)" : "translateY(-120%)",
       }}
     >
-      <Link href="/">
+      <Link component={RouterLink} to="/">
         <LogoIcon style={{ width: "4rem", height: "auto", fill: "#FF5115" }} />
       </Link>
       {isSmallScreen ? (

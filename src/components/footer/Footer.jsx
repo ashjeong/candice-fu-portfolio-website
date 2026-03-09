@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import "./Footer.css";
 import Link from "@mui/material/Link";
 import LogoIcon from "../common/Logo";
@@ -8,7 +9,7 @@ export default function Footer() {
 
   return (
     <div className="footer">
-      <Link href="/">
+      <Link component={RouterLink} to="/" sx={{ cursor: "pointer" }}>
         <LogoIcon
           className="footer-logo"
           style={{ width: "4.5rem", height: "auto", fill: "#FFF8EE" }}
