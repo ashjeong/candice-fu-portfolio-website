@@ -7,11 +7,15 @@ export default function Work() {
     <Grid
       container
       spacing={3}
-      columns={{ sm: 2, md: 8, xl: 12 }}
-      sx={{ flex: "auto", padding: "1.5rem" }}
+      sx={{
+        flex: "auto",
+        padding: "1.5rem",
+        maxWidth: "1300px",
+        margin: "0 auto",
+      }}
     >
       {projectsData.map((project, index) => (
-        <Grid key={index} size={{ sm: 2, md: 4, xl: 4 }}>
+        <Grid key={index} size={{ xs: 12, sm: 6 }}>
           <WorkCard
             title={project.title}
             description={project.description}

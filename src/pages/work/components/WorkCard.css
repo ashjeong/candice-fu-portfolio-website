@@ -1,6 +1,8 @@
 .card {
     width: 100%;
-    min-height: 100%;
+    /* make cards more rectangular to reduce vertical cropping of images */
+    aspect-ratio: 8.7 / 7;
+    border-radius: 25px;
     opacity: 0;
     animation: fadeInSlideUp .5s ease-out forwards;
 }
@@ -42,14 +44,14 @@
 
 .overlay-content h1 {
     font-size: 24px;
-    color: #333333;
+    color: var(--text-color, #333333);
     font-weight: normal;
     margin: 8px 0;
 }
 
 .overlay-content p {
     font-size: 16px;
-    color: #333333;
+    color: var(--text-color, #333333);
     margin: 0;
 }
 
