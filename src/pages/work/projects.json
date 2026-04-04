@@ -1,7 +1,7 @@
 [
     {
         "title": "Le Petit Patisserie",
-        "image-name": "LPP_Hero.json",
+        "imageName": "LPP_Hero.json",
         "tags": [
             "Illustration",
             "Brand Design",
@@ -9,38 +9,42 @@
         ],
         "description": "A whimsical brand identity bringin French pastries into a storybook world.",
         "backgroundColor": "#FDD10E",
-        "link": "/lepetitpatisserie"
+        "link": "/lepetitpatisserie",
+        "id": "lepetitpatisserie"
     },
     {
         "title": "mow",
-        "image-name": "mow.svg",
+        "imageName": "mow.svg",
         "tags": [
             "Packaging",
             "Brand Design",
             "Illustration"
         ],
         "description": "A sustainable  shaving kit, offering a luxury shaving experience.",
-        "backgroundColor": "#1E4D38",
-        "link": "/mow"
+        "backgroundColor": "#007745",
+        "link": "/mow",
+        "id": "mow"
     },
     {
         "title": "Conrad Design Group Illustration",
-        "image-name": "cdg.jpg",
+        "imageName": "cdg.jpg",
         "tags": [
             "Illustration"
         ],
         "description": "Illustrations capturing the energy and personality of Conrad Design Group's NYC office.",
         "backgroundColor": "#D9D9D6",
-        "link": "/conrandesigngroup"
+        "link": "/conrandesigngroup",
+        "id": "conrandesigngroup"
     },
     {
         "title": "Just for Fun",
-        "image-name": "fun.png",
+        "imageName": "fun.png",
         "tags": [
             "Fun Stuff!"
         ],
         "description": "A collection of illustrations and other mini projects that I made so far!",
         "backgroundColor": "#FFF8EE",
-        "link": "/justforfun"
+        "link": "/justforfun",
+        "id": "justforfun"
     }
 ]

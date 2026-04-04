@@ -21,6 +21,13 @@
     height: auto;
 }
 
+.subtitle {
+  font-size: 28px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  color: #FF5115;
+}
+
 .meditation {
     position: absolute;
     top: 0;

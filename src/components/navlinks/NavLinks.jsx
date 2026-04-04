@@ -10,11 +10,12 @@ export default function NavLinks({ isDrawer = false }) {
       direction={isSmallScreen ? "column" : "row"}
       spacing={isSmallScreen ? 3 : { sm: 2, md: 4 }}
       className={isDrawer ? "links-drawer" : "links"}
+      alignItems={isSmallScreen ? "flex-start" : "center"}
     >
       <Link
         component={RouterLink}
         class={isDrawer ? "link-drawer" : "link"}
-        to="/work"
+        href="/candice-fu-portfolio-website/work"
         underline="none"
         sx={{ cursor: "pointer" }}
       >
@@ -23,21 +24,11 @@ export default function NavLinks({ isDrawer = false }) {
       <Link
         component={RouterLink}
         class={isDrawer ? "link-drawer" : "link"}
-        to="/about"
+        href="/candice-fu-portfolio-website/about"
         underline="none"
         sx={{ cursor: "pointer" }}
       >
         {isDrawer ? "About" : "ABOUT"}
-      </Link>
-      <Link
-        component={RouterLink}
-        class={isDrawer ? "link-drawer" : "link"}
-        to="https://drive.google.com/file/d/18b9roccNMzs-1yWNJCMEHDjkmZakp_pQ/view?pli=1"
-        target="_blank"
-        underline="none"
-        sx={{ cursor: "pointer" }}
-      >
-        {isDrawer ? "Resume" : "RESUME"}
       </Link>
     </Stack>
   );
