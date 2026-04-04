@@ -1,7 +1,10 @@
 import { Grid, Stack } from "@mui/material";
 import Personas from "./Personas";
+import desktop_wireframes from "./assets/desktop_wireframes.png";
+import mobile_wireframes from "./assets/mobile_wireframes.png";
+import site_map from "./assets/site_map.png";
 
-export default function DesignProcess() {
+export default function DesignProcess({ isSmallScreen }) {
   return (
     <Stack spacing={4}>
       <h3>Design Process</h3>
@@ -9,16 +12,16 @@ export default function DesignProcess() {
       <Personas />
       <h5>Wireframes</h5>
       <Grid container spacing={2} sx={{ marginBottom: "2rem" }}>
-        <Grid size={8}>
+        <Grid size={isSmallScreen ? 12 : 8}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/desktop_wireframes.png"
+            src={desktop_wireframes}
             alt="Desktop Wireframes"
             style={{ width: "100%", borderRadius: "10px" }}
           />
         </Grid>
-        <Grid size={4}>
+        <Grid size={isSmallScreen ? 12 : 4}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/mobile_wireframes.png"
+            src={mobile_wireframes}
             alt="Mobile Wireframes"
             style={{ width: "100%", borderRadius: "10px" }}
           />
@@ -26,7 +29,7 @@ export default function DesignProcess() {
       </Grid>
       <h5>Sitemap</h5>
       <img
-        src="/src/pages/work/projects/patisserie/assets/site_map.png"
+        src={site_map}
         alt="Site Map"
         style={{ width: "100%", borderRadius: "10px" }}
       />

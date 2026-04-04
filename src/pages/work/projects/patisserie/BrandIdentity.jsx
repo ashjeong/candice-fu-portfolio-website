@@ -1,6 +1,13 @@
 import { Stack, Grid } from "@mui/material";
 import Lottie from "lottie-react";
-export default function BrandIdentity() {
+import patissire_logo from "./assets/patissire_logo.png";
+import wordmark from "./assets/wordmark.png";
+import color_palette from "./assets/color_palette.png";
+import tone_of_voice from "./assets/tone_of_voice.png";
+import paper_bag_mockup_1 from "./assets/paper_bag_mockup_1.png";
+import storefront_mockup_2 from "./assets/storefront_mockup_2.png";
+
+export default function BrandIdentity({ isSmallScreen }) {
   // load any JSON Lottie animations from the local assets folder
   const lottieAnimations = import.meta.glob("./assets/*.json", { eager: true });
   const showcase =
@@ -42,16 +49,16 @@ export default function BrandIdentity() {
       </p>
 
       <Grid container spacing={2} sx={{ marginBottom: "2rem" }}>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/patissire_logo.png"
+            src={patissire_logo}
             alt="Logo"
             style={{ width: "100%", borderRadius: "10px" }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/wordmark.png"
+            src={wordmark}
             alt="Wordmark"
             style={{ width: "100%", borderRadius: "10px" }}
           />
@@ -70,16 +77,16 @@ export default function BrandIdentity() {
         spacing={2}
         sx={{ marginBottom: "2rem", alignItems: "flex-start" }}
       >
-        <Grid size={7}>
+        <Grid size={isSmallScreen ? 12 : 7}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/color_palette.png"
+            src={color_palette}
             alt="Color Palette"
             style={{ width: "100%", borderRadius: "10px" }}
           />
         </Grid>
-        <Grid size={5}>
+        <Grid size={isSmallScreen ? 12 : 5}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/tone_of_voice.png"
+            src={tone_of_voice}
             alt="Tone of Voice"
             style={{
               width: "100%",
@@ -87,16 +94,16 @@ export default function BrandIdentity() {
             }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/paper_bag_mockup_1.png"
+            src={paper_bag_mockup_1}
             alt="Paper Bag Mockup 1"
             style={{ width: "100%", borderRadius: "10px" }}
           />
         </Grid>
-        <Grid size={6}>
+        <Grid size={isSmallScreen ? 12 : 6}>
           <img
-            src="/src/pages/work/projects/patisserie/assets/storefront_mockup_2.png"
+            src={storefront_mockup_2}
             alt="Storefront Mockup 2"
             style={{ width: "100%", borderRadius: "10px" }}
           />

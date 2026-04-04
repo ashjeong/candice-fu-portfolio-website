@@ -5,21 +5,23 @@ import Logo from "./Logo";
 import PackagingDevelopment from "./PackagingDevelopment";
 import VideoPitch from "./VideoPitch";
 import Reflection from "./Reflection";
-import { Stack } from "@mui/material";
+import { Stack, useMediaQuery } from "@mui/material";
 
 export default function Mow() {
+  const isSmallScreen = useMediaQuery("(max-width:1000px)");
+
   return (
     <Stack
-      spacing={12}
+      spacing={isSmallScreen ? 4 : 12}
       sx={{ padding: "1.5rem", maxWidth: 1500, margin: "0 auto" }}
     >
-      <Intro />
-      <Overview />
-      <BrandIdentity />
-      <Logo />
-      <PackagingDevelopment />
-      <VideoPitch />
-      <Reflection />
+      <Intro isSmallScreen={isSmallScreen} />
+      <Overview isSmallScreen={isSmallScreen} />
+      <BrandIdentity isSmallScreen={isSmallScreen} />
+      <Logo isSmallScreen={isSmallScreen} />
+      <PackagingDevelopment isSmallScreen={isSmallScreen} />
+      <VideoPitch isSmallScreen={isSmallScreen} />
+      <Reflection isSmallScreen={isSmallScreen} />
     </Stack>
   );
 }

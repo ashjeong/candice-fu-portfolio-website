@@ -1,8 +1,10 @@
 import { Stack, Box } from "@mui/material";
-export default function Overview() {
+import restaurant_window_psd_mockup from "./assets/restaurant_window_psd_mockup.png";
+
+export default function Overview({ isSmallScreen }) {
   return (
     <>
-      <Stack direction="row" spacing={4}>
+      <Stack direction={isSmallScreen ? "column" : "row"} spacing={4}>
         <Stack spacing={2} sx={{ flex: 1 }}>
           <h3>Overview</h3>
           <h5>
@@ -12,7 +14,7 @@ export default function Overview() {
           </h5>
           <Box
             sx={{
-              width: 524,
+              width: "100%",
               height: 52,
               bgcolor: "rgb(244, 237, 227)",
               borderRadius: "12px",
@@ -52,7 +54,7 @@ export default function Overview() {
         </Stack>
       </Stack>
       <img
-        src="/src/pages/work/projects/patisserie/assets/restaurant_window_psd_mockup.png"
+        src={restaurant_window_psd_mockup}
         alt="Restaurant Window PSD Mockup"
         style={{ width: "100%", borderRadius: "10px" }}
       />

@@ -1,10 +1,13 @@
-import RolePill from "./Role";
-import { Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
+import MowCorner from "./assets/Mow_Corner.jpg";
 
-export default function Overview() {
+export default function Overview({ isSmallScreen }) {
   return (
     <>
-      <Stack spacing={10} direction="row">
+      <Stack
+        spacing={isSmallScreen ? 3 : 10}
+        direction={isSmallScreen ? "column" : "row"}
+      >
         <Stack spacing={3}>
           <h3>Overview</h3>
           <p>
@@ -13,7 +16,22 @@ export default function Overview() {
             reducing the environmental impact of traditional shaving products.
           </p>
 
-          <RolePill />
+          <Box
+            sx={{
+              width: "100%",
+              height: 52,
+              bgcolor: "rgb(244, 237, 227)",
+              borderRadius: "16px",
+              display: "flex",
+              alignItems: "center",
+              px: 3,
+              boxSizing: "border-box",
+            }}
+          >
+            <p>
+              <strong className="strong">Role</strong>: Illustrator, Designer
+            </p>
+          </Box>
         </Stack>
 
         <Stack spacing={3}>
@@ -40,10 +58,7 @@ export default function Overview() {
           </p>
         </Stack>
       </Stack>
-      <img
-        src="src/pages/work/projects/mow/assets/Mow_corner.jpg"
-        alt="Mow Shaving Kit"
-      />
+      <img src={MowCorner} alt="Mow Shaving Kit" />
     </>
   );
 }

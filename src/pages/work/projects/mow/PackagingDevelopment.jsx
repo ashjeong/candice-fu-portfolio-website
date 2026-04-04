@@ -1,10 +1,14 @@
 import { Grid, Stack } from "@mui/material";
 import Lottie from "lottie-react";
 import boxMockup from "./assets/Mow_Box_Mockup.json";
+import MowBoxMockup from "./assets/Mow_Box_Mockup.png";
+import MowInside from "./assets/Mow_Inside.jpg";
+import MowBoxWithSleeve from "./assets/Mow_Box_with_Sleeve.jpg";
+import MowBoxSlideOut from "./assets/Mow_Box_Slide_Out.png";
 
-export default function PackagingDevelopment() {
+export default function PackagingDevelopment({ isSmallScreen }) {
   return (
-    <Stack spacing={2}>
+    <Stack spacing={3}>
       <h3>Packaging Development</h3>
 
       <h5>Unboxing Experience</h5>
@@ -33,7 +37,7 @@ export default function PackagingDevelopment() {
 
       <div>
         <img
-          src="src/pages/work/projects/mow/assets/Mow_Box_Mockup.png"
+          src={MowBoxMockup}
           alt="Mow Box Mockup"
           style={{ width: "100%", borderRadius: "16px" }}
         />
@@ -54,21 +58,21 @@ export default function PackagingDevelopment() {
         <Grid container spacing={3}>
           <Grid size={12}>
             <img
-              src="src/pages/work/projects/mow/assets/Mow_Inside.jpg"
+              src={MowInside}
               alt="Mow Inside"
               style={{ width: "100%", borderRadius: "16px" }}
             />
           </Grid>
-          <Grid size={5.05}>
+          <Grid size={isSmallScreen ? 12 : 5.05}>
             <img
-              src="src/pages/work/projects/mow/assets/Mow_Box_with_Sleeve.jpg"
+              src={MowBoxWithSleeve}
               alt="Mow Box with Sleeve"
               style={{ width: "100%", borderRadius: "16px" }}
             />
           </Grid>
-          <Grid size={6.95}>
+          <Grid size={isSmallScreen ? 12 : 6.95}>
             <img
-              src="src/pages/work/projects/mow/assets/Mow_Box_Slide_Out.png"
+              src={MowBoxSlideOut}
               alt="Mow Box Slide Out"
               style={{ width: "100%", borderRadius: "16px" }}
             />
