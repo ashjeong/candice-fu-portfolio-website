@@ -41,7 +41,7 @@ function getCardMediaComponent(imageName, title) {
   return (
     <CardMedia
       component="img"
-      image={`./src/pages/work/assets/${imageName}`}
+      image={`${import.meta.env.BASE_URL}assets/${imageName}`}
       alt={title}
       sx={{
         width: "100%",

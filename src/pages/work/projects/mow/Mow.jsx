@@ -13,7 +13,7 @@ export default function Mow() {
   return (
     <Stack
       spacing={isSmallScreen ? 4 : 12}
-      sx={{ padding: "1.5rem", maxWidth: 1500, margin: "0 auto" }}
+      sx={{ padding: "1.5rem", maxWidth: 1200, margin: "0 auto" }}
     >
       <Intro isSmallScreen={isSmallScreen} />
       <Overview isSmallScreen={isSmallScreen} />

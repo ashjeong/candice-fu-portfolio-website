@@ -83,7 +83,7 @@ function getCardMediaComponent(project) {
   return (
     <CardMedia
       component="img"
-      image={`./src/pages/work/assets/${project.imageName}`}
+      image={`${import.meta.env.BASE_URL}assets/${project.imageName}`}
       alt={project.title}
       sx={{
         borderRadius: "16px",

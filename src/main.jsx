@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import websiteTheme from "./components/common/Palette";
 import "./index.css";
 import MainLayout from "./layouts/MainLayout";
 import About from "./pages/about/About";
@@ -13,18 +15,21 @@ import JustForFun from "./pages/work/projects/JustForFun";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/candice-fu-portfolio-website/">
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/lepetitpatisserie" element={<Patisserie />} />
-          <Route path="/mow" element={<Mow />} />
-          <Route path="/conrandesigngroup" element={<ConranDesignGroup />} />
-          <Route path="/justforfun" element={<JustForFun />} />
-          <Route path="/about" element={<About />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={websiteTheme}>
+      <CssBaseline />
+      <BrowserRouter basename="/candice-fu-portfolio-website/">
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/lepetitpatisserie" element={<Patisserie />} />
+            <Route path="/mow" element={<Mow />} />
+            <Route path="/conrandesigngroup" element={<ConranDesignGroup />} />
+            <Route path="/justforfun" element={<JustForFun />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   </StrictMode>,
 );

@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import ScrollButton from "../components/scrollButton/ScrollButton";
 import { ThemeProvider } from "@mui/material/styles";
-import { websiteTheme } from "../components/common/Palette";
+import websiteTheme from "../components/common/Palette";
 
 export default function MainLayout() {
   const [showHeader, setShowHeader] = useState(true);

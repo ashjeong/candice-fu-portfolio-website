@@ -14,19 +14,43 @@ export default function NavLinks({ isDrawer = false }) {
     >
       <Link
         component={RouterLink}
-        class={isDrawer ? "link-drawer" : "link"}
-        href="/candice-fu-portfolio-website/work"
+        className={isDrawer ? "link-drawer" : "link"}
+        to="/work"
         underline="none"
-        sx={{ cursor: "pointer" }}
+        sx={(theme) => ({
+          cursor: "pointer",
+          color: theme.palette.primary.main,
+          fontSize: isDrawer
+            ? theme.typography.h3.fontSize
+            : {
+                xs: "max(14px, min(4vw, 18px))",
+                sm: theme.typography.h6.fontSize,
+              },
+          fontWeight: isDrawer
+            ? theme.typography.h3.fontWeight
+            : theme.typography.h6.fontWeight,
+        })}
       >
         {isDrawer ? "Work" : "WORK"}
       </Link>
       <Link
         component={RouterLink}
-        class={isDrawer ? "link-drawer" : "link"}
-        href="/candice-fu-portfolio-website/about"
+        className={isDrawer ? "link-drawer" : "link"}
+        to="/about"
         underline="none"
-        sx={{ cursor: "pointer" }}
+        sx={(theme) => ({
+          cursor: "pointer",
+          color: theme.palette.primary.main,
+          fontSize: isDrawer
+            ? theme.typography.h3.fontSize
+            : {
+                xs: "max(14px, min(4vw, 18px))",
+                sm: theme.typography.h6.fontSize,
+              },
+          fontWeight: isDrawer
+            ? theme.typography.h3.fontWeight
+            : theme.typography.h6.fontWeight,
+        })}
       >
         {isDrawer ? "About" : "ABOUT"}
       </Link>
