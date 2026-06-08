@@ -8,7 +8,7 @@ import Home from "./pages/home/Home";
 import Work from "./pages/work/Work";
 import Mow from "./pages/work/projects/mow/Mow";
 import Patisserie from "./pages/work/projects/patisserie/Patisserie";
-import ConranDesignGroup from "./pages/work/projects/ConranDesignGroup";
+import ConranDesignGroup from "./pages/work/projects/conran_design/ConranDesignGroup";
 import JustForFun from "./pages/work/projects/JustForFun";
 
 createRoot(document.getElementById("root")).render(
