@@ -4,8 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import projectsData from "./projects.json";
 import Lottie from "lottie-react";
 
-// Map of JSON filenames to their animation data
-const lottieAnimations = import.meta.glob("./assets/*.json", { eager: true });
+const mediaAssets = import.meta.glob(
+  "./assets/*.{png,jpg,jpeg,svg,webp,json}",
+  { eager: true },
+);
 
 function ProjectInfo({ project, isSmallScreen }) {
   const navigate = useNavigate();
@@ -48,42 +50,43 @@ function ProjectInfo({ project, isSmallScreen }) {
 }
 
 function getCardMediaComponent(project) {
+  const key = `./assets/${project.imageName}`;
+  const asset = mediaAssets[key]?.default;
   const isLottie = project.imageName.endsWith(".json");
 
-  if (isLottie) {
-    const key = `./assets/${project.imageName}`;
-    const animation = lottieAnimations[key]?.default;
+  if (!asset) {
+    return null;
+  }
 
-    if (animation) {
-      return (
-        <div
+  if (isLottie) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "500px",
+          maxHeight: "500px",
+          borderRadius: "16px",
+          overflow: "hidden",
+          background: "#fff",
+        }}
+      >
+        <Lottie
+          animationData={asset}
+          loop
+          autoplay
           style={{
             width: "100%",
-            maxWidth: "500px",
-            maxHeight: "500px",
-            borderRadius: "16px",
-            overflow: "hidden",
-            background: "#fff",
+            height: "100%",
           }}
-        >
-          <Lottie
-            animationData={animation}
-            loop
-            autoplay
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-          />
-        </div>
-      );
-    }
+        />
+      </div>
+    );
   }
 
   return (
     <CardMedia
       component="img"
-      image={`./src/pages/work/assets/${project.imageName}`}
+      image={asset}
       alt={project.title}
       sx={{
         borderRadius: "16px",

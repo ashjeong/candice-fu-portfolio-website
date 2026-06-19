@@ -10,38 +10,37 @@ import Lottie from "lottie-react";
 import "./WorkCard.css";
 import { Link } from "react-router-dom";
 
-// Map of JSON filenames to their animation data
-const images = import.meta.glob("../assets/*.{png,jpg,svg}", {
-  eager: true,
-});
-const lottieAnimations = import.meta.glob("../assets/*.json", { eager: true });
+const mediaAssets = import.meta.glob(
+  "../assets/*.{png,jpg,jpeg,svg,webp,json}",
+  { eager: true },
+);
 
 function getCardMediaComponent(imageName, title) {
-  const isLottie = imageName.endsWith(".json");
   const key = `../assets/${imageName}`;
+  const asset = mediaAssets[key]?.default;
+  const isLottie = imageName.endsWith(".json");
+
+  if (!asset) {
+    return null;
+  }
 
   if (isLottie) {
-    const key = `../assets/${imageName}`;
-    const animation = lottieAnimations[key]?.default;
-
-    if (animation) {
-      return (
-        <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
-          <Lottie
-            animationData={animation}
-            loop
-            autoplay
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
-      );
-    }
+    return (
+      <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
+        <Lottie
+          animationData={asset}
+          loop
+          autoplay
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      </div>
+    );
   }
 
   return (
     <CardMedia
       component="img"
-      image={`./src/pages/work/assets/${imageName}`}
+      image={asset}
       alt={title}
       sx={{
         width: "100%",
