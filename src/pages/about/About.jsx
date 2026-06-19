@@ -1,68 +1,147 @@
 import "./About.css";
-import aboutDrawing from "./assets/about-drawing.png";
-import pfpCandice from "./assets/pfp-candice.jpg";
+import aboutDrawing from "./assets/hero.svg";
+import pfpCandice from "./assets/pfp-candice.svg";
+import closingDrawing from "./assets/closing-hero.svg";
+import { Stack, Chip, useMediaQuery } from "@mui/material";
 
-function Hero() {
+function Hero({ isSmallScreen }) {
   return (
-    <div className="hero">
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img
-          className="hero-image about-hero-image"
-          src={aboutDrawing}
-          alt="About Drawing"
-        />
-      </div>
-      <div className="hero-text">
-        <h2>hi, i'm candice!</h2>
+    <Stack
+      direction={isSmallScreen ? "column" : "row"}
+      spacing={4}
+      alignItems="center"
+      className="hero"
+    >
+      <Stack spacing={2} alignItems="flex-start">
+        <Chip label="About" size="medium" variant="outlined" />
+        <h1>Designing thoughtful systems, with personality.</h1>
         <p>
-          I am a passionate graphic designer and illustrator with a love for
-          creating meaningful and visually engaging work that brings joy to
-          others.{" "}
+          Multidisciplinary designer focused on UX/UI and brand identity.
+          Currently Junior Designer at Arnold NY.
         </p>
-      </div>
-    </div>
+      </Stack>
+      <img
+        className="hero-image"
+        style={{
+          borderRadius: "16px",
+        }}
+        src={aboutDrawing}
+        alt="Illustration of a person."
+      />
+    </Stack>
   );
 }
 
-function AboutContent() {
+function AboutContent({ isSmallScreen }) {
   return (
-    <div className="hero">
-      <div>
-        <img
-          className="hero-image"
-          style={{
-            borderRadius: "50%",
-          }}
-          src={pfpCandice}
-          alt="Profile Picture of Candice Fu"
-        />
-      </div>
-      <div className="hero-text">
-        <p className="p2">
-          I graduated from the Rochester Institute of Technology in 2023 with a
-          BFA in Graphic Design and a minor in Advertising and Public Relations.
-          Currently, I am working as a junior designer at Arnold NY, where I
-          have the opportunity to further refine my design skills and contribute
-          to impactful projects.{" "}
+    <Stack
+      direction={isSmallScreen ? "column" : "row"}
+      spacing={isSmallScreen ? 4 : 10}
+      alignItems="center"
+      className="about-content"
+    >
+      <Stack
+        spacing={4}
+        alignItems="center"
+        className="about-content"
+        sx={{ maxWidth: 850 }}
+      >
+        <p>
+          I’m a multidisciplinary designer working across product (UX/UI) and
+          brand identity. I graduated from Rochester Institute of Technology
+          with a BFA in Graphic Design and a minor in Advertising and Public
+          Relations, and I’m currently a Junior Designer at Arnold NY.
         </p>
-        <p className="p2">
-          As a designer, I’m constantly striving to push my creative boundaries
-          and produce work of the highest quality. I enjoy exploring various
-          aspects of design to continually improve my craft and expand my
-          capabilities. In my personal projects, I like to add a bit of fun and
-          humor, bringing a unique and playful perspective to my designs!
+        <p>
+          I contribute to both digital and brand-driven projects, refining user
+          flows, building scalable UI systems, and supporting visual identities
+          across touchpoints. I’m especially interested in where structure and
+          storytelling meet: how thoughtful systems and strong visual language
+          come together to create cohesive, intuitive experiences.
         </p>
-      </div>
-    </div>
+        <p>
+          I approach design with a systems mindset, considering how decisions
+          scale and connect within a larger ecosystem. Whether contributing to a
+          design system or shaping a brand expression, I care deeply about
+          clarity, craft, and the details that make work feel considered and
+          well-resolved.
+        </p>
+        <p>
+          I’m intentional about growing into a designer who bridges product and
+          brand, balancing strategic thinking with strong visual execution.
+          Outside of client work, I explore more playful ideas through
+          illustration, often incorporating humor as a way to keep creativity
+          evolving.
+        </p>
+      </Stack>
+      <img
+        className="about-pfp"
+        style={{
+          borderRadius: "16px",
+        }}
+        src={pfpCandice}
+        alt="Portrait of Candice Fu"
+      />
+    </Stack>
+  );
+}
+
+function Closing({ isSmallScreen }) {
+  return isSmallScreen ? (
+    <Stack
+      spacing={2}
+      direction="column"
+      alignItems="center"
+      className="closing"
+    >
+      <h1> Let's build something together!</h1>
+
+      <img
+        className="closing-image"
+        style={{
+          borderRadius: "16px",
+        }}
+        src={closingDrawing}
+        alt="Illustration of a person waving."
+      />
+    </Stack>
+  ) : (
+    <Stack
+      spacing={2}
+      direction="row"
+      alignItems="flex-start"
+      className="closing"
+    >
+      <img
+        className="closing-image"
+        style={{
+          borderRadius: "16px",
+          width: "30%",
+        }}
+        src={closingDrawing}
+        alt="Illustration of a person waving."
+      />
+      <h1> Let's build something together!</h1>
+    </Stack>
   );
 }
 
 function About() {
+  const isSmallScreen = useMediaQuery("(max-width:800px)");
+
   return (
-    <>
-      <Hero />
-      <AboutContent />
-    </>
+    <Stack
+      spacing={14}
+      sx={{
+        maxWidth: 1500,
+        margin: "0 auto",
+        marginBottom: "4rem",
+      }}
+    >
+      <Hero isSmallScreen={isSmallScreen} />
+      <AboutContent isSmallScreen={isSmallScreen} />
+      <Closing isSmallScreen={isSmallScreen} />
+    </Stack>
   );
 }
 

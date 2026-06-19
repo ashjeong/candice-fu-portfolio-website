@@ -4,3 +4,19 @@
     height: auto;
   }
 }
+
+.about-content {
+  width: 100%;
+}
+
+.about-pfp {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+}
+
+.closing {
+  width: 100%;
+}
