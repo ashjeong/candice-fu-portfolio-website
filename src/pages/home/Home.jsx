@@ -3,6 +3,7 @@ import { Stack, useMediaQuery } from "@mui/material";
 import WebHomePage from "./WebHomePage";
 import MobileHomePage from "./MobileHomePage";
 import WorkCardVertical from "../work/WorkCardVertical";
+import { Closing } from "../about/About";
 
 function Hero() {
   const isSmallScreen = useMediaQuery("(max-width:800px)");
@@ -14,6 +15,7 @@ function Hero() {
     >
       {isSmallScreen ? <MobileHomePage /> : <WebHomePage />}
       <WorkCardVertical />
+      <Closing isSmallScreen={isSmallScreen} />
     </Stack>
   );
 }

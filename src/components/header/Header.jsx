@@ -1,5 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
-import { CloseRounded, MenuRounded } from "@mui/icons-material";
+import { CloseRounded, MoreHorizRounded } from "@mui/icons-material";
 import { Drawer, Link, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import "./Header.css";
@@ -22,12 +22,12 @@ export default function Header({ showHeader }) {
       </Link>
       {isSmallScreen ? (
         <>
-          <MenuRounded
+          <MoreHorizRounded
             aria-label="open drawer"
             onClick={() => {
               setDrawerOpen(true);
             }}
-            sx={{ color: "#212121", fontSize: "5rem", fontWeight: "normal" }}
+            sx={{ color: "#646CFF", fontSize: "4rem", fontWeight: "normal" }}
           />
           <Drawer
             anchor="right"
@@ -54,7 +54,7 @@ export default function Header({ showHeader }) {
                 color: "#212121",
               }}
             />
-            <NavLinks isDrawer={true} />
+            <NavLinks isDrawer={true} onNavigate={() => setDrawerOpen(false)} />
           </Drawer>
         </>
       ) : (
