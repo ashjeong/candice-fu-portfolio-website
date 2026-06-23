@@ -42,7 +42,7 @@ export default function MainLayout() {
       <Stack sx={{ minHeight: "100vh" }}>
         <ScrollButton></ScrollButton>
         <Header showHeader={showHeader} />
-        <main style={{ flex: "auto" }}>
+        <main style={{ flex: "auto", marginBottom: "3rem" }}>
           <Outlet />
         </main>
         <Footer />

@@ -1,7 +1,7 @@
 import { Chip, Stack, Button, CardMedia, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import projectsData from "./projects.json";
+import projectsData from "./projects_vertical.json";
 import Lottie from "lottie-react";
 
 const mediaAssets = import.meta.glob(

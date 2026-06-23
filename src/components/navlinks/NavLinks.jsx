@@ -2,7 +2,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Link, Stack, useMediaQuery } from "@mui/material";
 import "./NavLinks.css";
 
-export default function NavLinks({ isDrawer = false }) {
+export default function NavLinks({ isDrawer = false, onNavigate }) {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   return (
@@ -16,6 +16,9 @@ export default function NavLinks({ isDrawer = false }) {
         component={RouterLink}
         className={isDrawer ? "link-drawer" : "link"}
         to="/work"
+        onClick={() => {
+          onNavigate?.();
+        }}
         underline="none"
         sx={(theme) => ({
           cursor: "pointer",
@@ -37,6 +40,9 @@ export default function NavLinks({ isDrawer = false }) {
         component={RouterLink}
         className={isDrawer ? "link-drawer" : "link"}
         to="/about"
+        onClick={() => {
+          onNavigate?.();
+        }}
         underline="none"
         sx={(theme) => ({
           cursor: "pointer",

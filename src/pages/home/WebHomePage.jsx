@@ -4,7 +4,7 @@ import hero from "./assets/hero.svg";
 
 export default function WebHomePage() {
   return (
-    <Grid container spacing={2} alignItems="center" sx={{ padding: "1.5rem" }}>
+    <Grid container spacing={2} alignItems="center">
       <Grid size={6} sx={{ position: "relative" }}>
         <div className="hero-text">
           <h1>hi!</h1>
